@@ -13,7 +13,7 @@ USER root
 RUN cp -R $SOLR_CONFIG_DIR/_default $SOLR_CONFIG_DIR/ckan
 
 # Update the schema
-ADD https://raw.githubusercontent.com/ckan/ckan/$CKAN_BRANCH/ckan/config/solr/schema.xml $SOLR_SCHEMA_FILE
+ADD https://raw.githubusercontent.com/piersoft/ckan-docker/master/ckan/patches/managed-schema $SOLR_SCHEMA_FILE
 RUN chmod 644 $SOLR_SCHEMA_FILE 
 
 USER solr
